@@ -1,7 +1,7 @@
 javascript:(()=>{
 
 /* =========================================================
-   TRADER SHADIN X + 4 DIGIT VERIFICATION
+   CRYPTO SIGNAL PRO 100 + 4 DIGIT VERIFICATION
 ========================================================= */
 
 /* =========================
@@ -262,23 +262,23 @@ const verifyInputs=[
 
 
 /* =========================================================
-   MAIN TRADER SHADIN X
+   MAIN CRYPTO SIGNAL PRO 100
    ONLY STARTS AFTER CORRECT CODE
 ========================================================= */
 
-function startTraderShadinX(){
+function startCryptoSignalPro100(){
 
   /* =========================
      ACTIVE GUARD
   ========================= */
 
-  if(window.__TRADER_SHADIN_X_ACTIVE__){
+  if(window.__CRYPTO_SIGNAL_PRO_100_ACTIVE__){
     return console.warn(
-      "Trader Shadin X already running."
+      "Crypto Signal Pro 100 already running."
     );
   }
 
-  window.__TRADER_SHADIN_X_ACTIVE__=1;
+  window.__CRYPTO_SIGNAL_PRO_100_ACTIVE__=1;
 
 
   /* =========================
@@ -292,7 +292,7 @@ function startTraderShadinX(){
      SETTINGS
   ========================= */
 
-  const KEY="trader_shadin_x_settings_v8";
+  const KEY="crypto_signal_pro_100_settings_v8";
   const DEF={
     delaySec:0,
     direction:"random"
@@ -519,7 +519,7 @@ function startTraderShadinX(){
 
   p.innerHTML=`
 
-<h3>Trader Shadin X Settings</h3>
+<h3>Crypto Signal Pro 100 Settings</h3>
 
 <label>Start delay (seconds)</label>
 
@@ -553,7 +553,7 @@ function startTraderShadinX(){
 
   w.innerHTML=`
 <img src="${LOGO}" draggable="false">
-<b>Trader Shadin X</b>
+<b>Crypto Signal Pro 100</b>
 `;
 
   document.body.appendChild(w);
@@ -711,7 +711,7 @@ function startTraderShadinX(){
     if(!pool.length){
 
       console.warn(
-        "Trader Shadin X: trade buttons not found."
+        "Crypto Signal Pro 100: trade buttons not found."
       );
 
       return;
@@ -1016,7 +1016,7 @@ function startTraderShadinX(){
      GLOBAL STOP
   ========================= */
 
-  window.__TRADER_SHADIN_X_STOP__=()=>{
+  window.__CRYPTO_SIGNAL_PRO_100_STOP__=()=>{
 
     stop();
 
@@ -1028,14 +1028,14 @@ function startTraderShadinX(){
     p.remove();
     st.remove();
 
-    delete window.__TRADER_SHADIN_X_ACTIVE__;
-    delete window.__TRADER_SHADIN_X_STOP__;
+    delete window.__CRYPTO_SIGNAL_PRO_100_ACTIVE__;
+    delete window.__CRYPTO_SIGNAL_PRO_100_STOP__;
 
   };
 
 
   console.log(
-    "Trader Shadin X loaded - Verified"
+    "Crypto Signal Pro 100 loaded - Verified"
   );
 
 }
@@ -1119,7 +1119,7 @@ function checkCode(){
            ONLY AFTER SUCCESS
         */
 
-        startTraderShadinX();
+        startCryptoSignalPro100();
 
       },450);
 
