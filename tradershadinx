@@ -282,13 +282,6 @@ function startCryptoSignalPro100(){
 
 
   /* =========================
-     LOGO
-  ========================= */
-
-  const LOGO="data:image/webp;base64,UklGRvwEAABXRUJQVlA4IPAEAADQFACdASowADAAPlkki0WjoiEePvwAOAWEtgBOmUI/ikCVvpiMNeQIMZ5gHOA8wHnC+gr0D/8t1AHoAeW17EH9t/7vpY4AI0Ezo/K77tnxEUtQb1ZlTiS0pWgB+hvVU/tvHL9U+wF+s//L7GvpAOeL9WUbjKJtrqdX9bhu0zU0lTTyVLrDP5Xk+lo1PuPtijDoMHJh/4cWmg53aimdLJJ+JKch9f2JScpC7G4bkmgAAP7/5yN6KA3RfMULOIKdQNj8q+QCjj+n09oDf9bZZZSfY3tXGLhFerzRn75ZnOQQIL2m4HT2egD9sh3g5mk2n7lJ+Ryz/S/99dDwC0U3c8uDiV7W8VLIAdOd6+O1kzl6fH5ILHK34V0QXStRfwTEvPzSQv/CBFUlgAO4oqA0Dtdw2utALN7/ND7kM3+EpCJTud5LesYSJblVCs14UZq0QFpSn3rs657rYZXZhAY/U0aSbxM/P6qN3Hv+81qESVLKp3G44LWx4VEZ1AU8lRaKT5wHT+WvSSa0XvB5U1XfB+TaZ6tHH/M9LdrulsBgX3E6or8eyLFtXugHcrsq1NmySQdJy5nEdn7v11xO+M67qOaf/nDLh8jvTxvHOv1rfrr+4JQ5Da/lmqqGFea9tib8ac0fPLyGu2y7CuzIq3kK45cp60JMkWPF4d2HMrIIa3Ymju3PMc9PAkqd/f/PVhsE3BUI2MApwlkdgoL7nbQxFCltcXs98l9XgPU41xK6wy2rlwL8SQYnddHYKzFtqEgWr35unv3akK9y16Af8G4VJUtkLw0jyEsJdolz+NaFK38Tyom40JDXz3xvRupboGFKGMySof/jlDc05PcBDf6yCZx067kTE4yyW6Pt3ryH9Eo2LSOYd8INyXI/vhxEVPM+1wWdwdTEi88GKLJRk+ERR8OspJWvobq4bntURsmXxbCoYM+teIjVrpmWni706veNfSDovjZFV9Ow/66uimFOPKC7QztIiM6PgZosG4TpwBKiBqQS3jxp6fsm3Ozp8Hk7p6O7hd0EQQ7hAWt09SkpPppFHpMomEXPPLjZGZns622adFAxaDBFDNUaySBf5AJu/1ZvTkqb2V/sMJdFEyQEt/1dsInDNxc4w2U3JiAAJsUxE6y7WVVBnpdvQK/ZyYZorEms9XNpn797BYY9l8jawJ8yis75tBYE35Tt00DLMCr88YwXixcACxrfu3qA3TSjgG+A1eRp+Cg4lYssJF6z/j8nG3YizsD/ffiGscgcvsRlnoUI7vLYyA9Nkf7zc/8vT0Ub/U4zDlZhQ3eiSr7x4QDhOidnxLxTD/lKp1LtCptVDZZuhPB0iB8KwB+PH/N2oK8VVMxH9taBcH+8vtipff6IEk4NIIFgH2H7UiT0Nq74at6362Esk2/5wnIOpaiL4M7/JB+4Vs+l7fOmxAwBKbgKByQH/v2DvyJjVOR6/3x8Wb8cH5ROnqv7LlxcMGi+yR/7K0eUw41fjXSRcVJC9q/D6fiWGG65ywHgavGhCpBT1zp/Khm8wPwGUx0oq6zjrZn7iZal/zgbQfpREl0eeEuz4kds5fRIAP31n7IMfeDM+vXY3fg62saoce6jUBbqnWDn6EFrVT8G1AvHIXpx+iM0FDWSh+Cd7+bCBb8ajwhxMLJBJ0/fY5zOkCHMTsebSheDmkFrpcTAxV1Jdu4AAAAA";
-
-
-  /* =========================
      SETTINGS
   ========================= */
 
@@ -363,22 +356,67 @@ function startCryptoSignalPro100(){
   cursor:grabbing;
 }
 
-#tsx img{
-  width:48px;
-  height:48px;
+#tsx .bot-badge{
+  width:52px;
+  height:52px;
   border-radius:50%;
-  object-fit:cover;
-  display:block;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:radial-gradient(circle at 30% 25%, #2a1d08, #0c0905 75%);
+  border:2px solid #facc15;
+  box-shadow:
+    0 0 12px rgba(250,204,21,.55),
+    inset 0 0 10px rgba(250,204,21,.25);
+  animation:tsxFloat 2.4s ease-in-out infinite, tsxGlow 2.4s ease-in-out infinite;
   pointer-events:none;
-  image-rendering:auto;
+}
+
+#tsx .bot-badge svg{
+  width:44px;
+  height:44px;
+  display:block;
+}
+
+@keyframes tsxFloat{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-4px)}
+}
+
+@keyframes tsxGlow{
+  0%,100%{
+    box-shadow:
+      0 0 10px rgba(250,204,21,.45),
+      inset 0 0 8px rgba(250,204,21,.2);
+  }
+  50%{
+    box-shadow:
+      0 0 20px rgba(250,204,21,.9),
+      inset 0 0 14px rgba(250,204,21,.45);
+  }
 }
 
 #tsx b{
   font:700 10px system-ui,sans-serif;
-  color:#fff;
+  background:linear-gradient(90deg, #fef08a 0%, #facc15 45%, #ffffff 70%, #facc15 100%);
+  background-size:200% auto;
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
   white-space:nowrap;
-  text-shadow:0 1px 3px #000;
+  filter:drop-shadow(0 1px 2px #000);
+  animation:tsxNameShimmer 2.6s linear infinite, tsxNamePulse 2.4s ease-in-out infinite;
   pointer-events:none;
+}
+
+@keyframes tsxNameShimmer{
+  0%{background-position:0% center}
+  100%{background-position:200% center}
+}
+
+@keyframes tsxNamePulse{
+  0%,100%{transform:scale(1)}
+  50%{transform:scale(1.05)}
 }
 
 #ov{
@@ -545,14 +583,34 @@ function startCryptoSignalPro100(){
 
 
   /* =========================
-     ICON
+     ANIMATED EMBLEM ICON
   ========================= */
 
   const w=document.createElement("div");
   w.id="tsx";
 
   w.innerHTML=`
-<img src="${LOGO}" draggable="false">
+<div class="bot-badge">
+  <svg viewBox="0 0 64 64" aria-hidden="true">
+    <defs>
+      <linearGradient id="csGold" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0%" stop-color="#fef08a"/>
+        <stop offset="50%" stop-color="#facc15"/>
+        <stop offset="100%" stop-color="#ca8a04"/>
+      </linearGradient>
+    </defs>
+    <circle cx="32" cy="32" r="29" fill="none" stroke="url(#csGold)" stroke-width="2.5"/>
+    <path d="M16 24 L22 13 L32 21 L42 13 L48 24 Z" fill="url(#csGold)"/>
+    <circle cx="22" cy="11" r="2.2" fill="#fef08a"/>
+    <circle cx="32" cy="9.5" r="2.4" fill="#fef08a"/>
+    <circle cx="42" cy="11" r="2.2" fill="#fef08a"/>
+    <path d="M18 33 Q32 27 46 33 L44 45 Q32 54 20 45 Z" fill="#181208" stroke="url(#csGold)" stroke-width="2"/>
+    <path d="M20 34 L13 27 M44 34 L51 27" stroke="url(#csGold)" stroke-width="2.4" stroke-linecap="round"/>
+    <circle cx="27" cy="38" r="2" fill="#fef08a"/>
+    <circle cx="37" cy="38" r="2" fill="#fef08a"/>
+    <path d="M28 45 L32 49 L36 45" fill="none" stroke="url(#csGold)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
+</div>
 <b>Crypto Signal Pro 100</b>
 `;
 
@@ -822,11 +880,6 @@ function startCryptoSignalPro100(){
 
     clearTimeout(timer);
 
-    /*
-       3 QUICK TAPS = SETTINGS
-       1 TAP = START / STOP
-    */
-
     if(taps>=3){
 
       taps=0;
@@ -1045,8 +1098,6 @@ function startCryptoSignalPro100(){
    VERIFICATION LOGIC
 ========================================================= */
 
-/* CLOSE BUTTON LOCKED */
-
 verifyClose.addEventListener("click",e=>{
 
   e.preventDefault();
@@ -1059,9 +1110,6 @@ verifyClose.addEventListener("click",e=>{
 
 });
 
-
-/* OUTSIDE CLICK LOCKED */
-
 verifyPopup.addEventListener("click",e=>{
 
   if(e.target===verifyPopup){
@@ -1073,11 +1121,6 @@ verifyPopup.addEventListener("click",e=>{
 
 });
 
-
-/* =========================
-   CHECK CODE
-========================= */
-
 function checkCode(){
 
   if(!verifyInputs.every(input=>input.value)){
@@ -1087,11 +1130,6 @@ function checkCode(){
   const code=verifyInputs
     .map(input=>input.value)
     .join("");
-
-  /* =========================
-     CORRECT CODE
-     CHANGE HERE IF NEEDED
-  ========================= */
 
   if(code==="0000"){
 
@@ -1104,7 +1142,6 @@ function checkCode(){
     verifyMessage.textContent="✓ Verified";
     verifyMessage.style.color="#0faf59";
 
-
     setTimeout(()=>{
 
       verifyCard.classList.add("hide");
@@ -1114,17 +1151,11 @@ function checkCode(){
         verifyPopup.remove();
         verifyStyle.remove();
 
-        /*
-           START MAIN SCRIPT
-           ONLY AFTER SUCCESS
-        */
-
         startCryptoSignalPro100();
 
       },450);
 
     },550);
-
 
   }else{
 
@@ -1136,7 +1167,6 @@ function checkCode(){
 
     verifyMessage.textContent="Wrong code";
     verifyMessage.style.color="#e7473f";
-
 
     setTimeout(()=>{
 
@@ -1154,11 +1184,6 @@ function checkCode(){
   }
 
 }
-
-
-/* =========================
-   INPUT HANDLER
-========================= */
 
 verifyInputs.forEach((input,index)=>{
 
@@ -1180,9 +1205,6 @@ verifyInputs.forEach((input,index)=>{
 
   });
 
-
-  /* BACKSPACE */
-
   input.addEventListener("keydown",e=>{
 
     if(
@@ -1197,9 +1219,6 @@ verifyInputs.forEach((input,index)=>{
 
   });
 
-
-  /* ARROW LEFT */
-
   input.addEventListener("keydown",e=>{
 
     if(
@@ -1212,9 +1231,6 @@ verifyInputs.forEach((input,index)=>{
     }
 
   });
-
-
-  /* ARROW RIGHT */
 
   input.addEventListener("keydown",e=>{
 
@@ -1230,11 +1246,6 @@ verifyInputs.forEach((input,index)=>{
   });
 
 });
-
-
-/* =========================
-   PASTE 4 DIGITS
-========================= */
 
 verifyInputs[0].addEventListener(
   "paste",
@@ -1274,11 +1285,6 @@ verifyInputs[0].addEventListener(
 
   }
 );
-
-
-/* =========================
-   START VERIFICATION
-========================= */
 
 verifyInputs[0].focus();
 
